@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "com.haiyishuzi.haiyishuzijcm"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+//用到的依赖去version.gradle中查有没有，没有在version.gradle中配置一下，引用时引用version.gradle中的，便于版本升级
+dependencies {
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.androidx.app_compat
+    implementation deps.constraint_layout
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    annotationProcessor deps.dagger.android_support_compiler
+    annotationProcessor deps.dagger.compiler
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    implementation deps.lifecycle.java8
+    annotationProcessor deps.lifecycle.compiler
+    //版本低于21时的分包
+    implementation deps.androidx.multidex
+    implementation deps.timber
+    implementation deps.retrofit.runtime
+    //    implementation deps.retrofit.gsonimplementation deps.timber
+    implementation deps.retrofit.jackson
+    //需要整理
+    implementation deps.persistent_cookie_jar
+    implementation deps.room.runtime
+    implementation deps.room.rxjava2
+    annotationProcessor deps.room.compiler
+    implementation deps.glide.runtime
+    implementation deps.barlibrary
+
+
+    testImplementation deps.junit
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.espresso.core
+    implementation deps.androidx.recyclerview
+    implementation deps.material
+    implementation deps.androidx.annotations
+    implementation deps.live_event_bus
+
+    implementation project(path: ':cordovaJcm')
+
+}

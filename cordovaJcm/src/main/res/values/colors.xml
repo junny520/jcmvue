@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="bgcolor">#F4F4F4</color>
+    <color name="red">#f2453d</color>
+    <color name="ios_style_statsbar_color">#fafafa</color>
+</resources>

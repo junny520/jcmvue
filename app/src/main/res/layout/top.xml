@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="topLayoutInfo"
+            type="com.haiyishuzi.haiyishuzijcm.vo.TopLayoutInfo" />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/actionbar_height"
+    android:background="@color/bgcolor">
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:paddingLeft="@dimen/default_margin"
+        android:paddingRight="@dimen/default_margin"
+        android:paddingBottom="@dimen/default_margin"
+        android:paddingTop="@dimen/default_margin"
+        android:layout_centerVertical="true"
+        app:visibleGone="@{topLayoutInfo.back}"
+        android:src="@drawable/back_black" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:maxWidth="200dp"
+        android:textSize="18sp"
+        android:text="@{topLayoutInfo.title}"
+        android:textColor="@color/gray"
+        android:layout_centerInParent="true"
+        tools:text="标题"/>
+</RelativeLayout>
+
+</layout>
+

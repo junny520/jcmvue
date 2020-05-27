@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.haiyi.mobile" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>海颐数字移动开发框架</name>
+    <description>
+        海颐数字移动开发框架的配置模板
+    </description>
+    <author email="wangpingliag@haiyi.com" href="">
+        海颐数字移动组
+    </author>
+    <!--打开H5进入的页面，路径在www根目录下，如果不在根目录请写路径，如syfw/index.html,此处命名不支持驼峰，用下划线或中线-->
+    <content src="http://www.163.com" />
+    <!--日志输出等级-->
+    <preference name="loglevel" value="DEBUG" />
+    <!--是否显示title，默认false-->
+    <preference name="ShowTitle" value="true" />
+    <!--是否全屏，默认false。SetFullscreen为主，SetFullscreen没设置的时候找Fullscreen-->
+    <preference name="SetFullscreen" value="false" />
+    <preference name="Fullscreen" value="false" />
+
+    <!--配置插件-->
+    <!--白名单插件-->
+    <feature name="Whitelist">
+        <!--路径-->
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <!--是否自动加载-->
+        <param name="onload" value="true" />
+        <!--所在配置文件的文件名，白名单解析的时候使用-->
+        <param name="configName" value="config_wpl"/>
+    </feature>
+    <!--白名单相关配置-->
+    <access origin="*" />
+    <!--<allow-intent href="http://*/*" />-->
+    <!--<allow-intent href="https://*/*" />-->
+    <!--<allow-navigation href="http://*/*" />-->
+    <!--<allow-navigation href="https://*/*" />-->
+    <allow-navigation href="*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <!--相机-->
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+</widget>

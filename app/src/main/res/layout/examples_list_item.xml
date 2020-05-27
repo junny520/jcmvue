@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="entity"
+            type="com.haiyishuzi.haiyishuzijcm.vo.ExamplesListEntity"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="44dp"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/componentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{entity.componentName}"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/author"
+            android:paddingLeft="10dp"
+
+            />
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{entity.author}"
+            android:layout_toLeftOf="@id/right_Btn"
+            android:gravity="center_vertical"
+            android:paddingRight="5dp"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/nav_backgournd_FF3B66CE"/>
+        <ImageView
+            android:id="@+id/right_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/item_next"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="10dp"
+            android:layout_margin="5dp"/>
+
+    </RelativeLayout>
+</layout>
+

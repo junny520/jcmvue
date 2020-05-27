@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="headStates"
+            type="com.haiyishuzi.haiyishuzijcm.vo.HeadStates" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/nav_backgournd_FF3B66CE"
+        android:paddingTop="24dp">
+
+        <TextView
+            android:id="@+id/head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:ellipsize="marquee"
+            android:gravity="left|center_vertical"
+            android:singleLine="true"
+            android:text="@{headStates.title}"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibleGone='@{null != headStates &amp;&amp; headStates.title != null}'
+            tools:text="个人住房公积金账户" />
+
+        <ImageButton
+            android:id="@+id/right_one_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/default_margin"
+            android:paddingLeft="@dimen/default_margin"
+            android:background="@null"
+            app:imageUrl="@{headStates.rightOne}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_two_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibleGone='@{null != headStates &amp;&amp; headStates.rightOne != 0}'
+            tools:src="@drawable/nav_home" />
+
+        <ImageButton
+            android:id="@+id/right_two_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/default_margin"
+            android:paddingLeft="@dimen/default_margin"
+            android:background="@null"
+            app:imageUrl="@{headStates.rightTwo}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_three_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibleGone='@{null != headStates &amp;&amp; headStates.rightTwo != 0}'
+            tools:src="@drawable/nav_preview" />
+
+        <ImageButton
+            android:id="@+id/right_three_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="20dp"
+            android:paddingLeft="@dimen/default_margin"
+            android:background="@null"
+            app:imageUrl="@{headStates.rightThree}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibleGone='@{null != headStates &amp;&amp; headStates.rightThree != 0}'
+            tools:src="@drawable/nav_scan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
